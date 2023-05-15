@@ -145,3 +145,6 @@ body {
         width: 90%;
     }
 }
+#answers-box>button {
+    height: auto;
+}
