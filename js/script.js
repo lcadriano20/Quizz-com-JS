@@ -10,7 +10,7 @@ let points = 0;
 let actualQuestion = 0;
 
 // Perguntas 
-const questions = [
+let questions = [
   {
     question: "PHP foi desenvolvido para qual fim?",
     answers: [
@@ -159,6 +159,19 @@ const questions = [
     ]
   }
 ]
+
+// Função para embaralhar as respostas
+function shuffleAnswers(answers) {
+  for (let i = answers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [answers[i], answers[j]] = [answers[j], answers[i]];
+  }
+}
+
+// Embaralhar as respostas para cada pergunta
+questions.forEach((question) => {
+  shuffleAnswers(question.answers);
+})
 
 
 // Substituição do quizz para a primeira pergunta 
